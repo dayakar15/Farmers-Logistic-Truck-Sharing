@@ -1,0 +1,28 @@
+#home-head{
+    margin-top: 4rem;
+    text-align: center;
+  background-clip: text;}
+#para-div1{ width:70%;margin: 5rem auto;text-align: center;}
+#para-div1 p{padding-bottom: 10px;}
+#info-h3{padding-top: 4rem;}
+#info-ul{margin-right: 2rem ;}
+#info-ul li{padding-top: 1rem;}
+footer{
+  text-align: center;
+  padding: 1rem;
+   background:
+    radial-gradient(circle at top left, #eaf18c, transparent 60%),
+    linear-gradient(120deg, #a3e47d, #a3e47d);
+  position: fixed;
+  bottom:0;
+  z-index: 100;
+  width: 100%;}
+main {
+  position: relative;
+  overflow: hidden;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  min-height: calc(100vh - 95px);
+background: linear-gradient(
+  rgba(166, 238, 212, 0.8),
+  rgb(1, 122, 122));}

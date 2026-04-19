@@ -1,0 +1,41 @@
+create database webdb11;
+use webdb11;
+CREATE TABLE users1 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    mobile VARCHAR(20) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'user') NOT NULL DEFAULT 'user',
+    approved TINYINT(1) DEFAULT 0
+);
+CREATE TABLE truck_posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    market_date DATE,
+    truck_number VARCHAR(50) NULL,
+    route_from VARCHAR(100),
+    route_to VARCHAR(100),
+    available_space FLOAT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users1(id)
+);
+
+
+CREATE TABLE transport_requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    post_id INT,
+    requester_id INT,
+    crop_name VARCHAR(100) NULL,
+    crop_quantity FLOAT NULL,
+    status ENUM('pending','approved','rejected') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (post_id) REFERENCES truck_posts(id),
+    FOREIGN KEY (requester_id) REFERENCES users1(id)
+);
+
+
+Select * from users1;
+Select * from truck_posts;
+Select * from transport_requests ;
