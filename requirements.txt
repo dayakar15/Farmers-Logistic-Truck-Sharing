@@ -1,4 +1,4 @@
-1. https://www.python.org/downloads/
+
    python 3.12 version
 
 2. https://nodejs.org/en 
