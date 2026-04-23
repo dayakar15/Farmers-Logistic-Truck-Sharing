@@ -1,28 +1,76 @@
-#home-head{
-    margin-top: 4rem;
-    text-align: center;
-  background-clip: text;}
-#para-div1{ width:70%;margin: 5rem auto;text-align: center;}
-#para-div1 p{padding-bottom: 10px;}
-#info-h3{padding-top: 4rem;}
-#info-ul{margin-right: 2rem ;}
-#info-ul li{padding-top: 1rem;}
-footer{
-  text-align: center;
-  padding: 1rem;
-   background:
-    radial-gradient(circle at top left, #eaf18c, transparent 60%),
-    linear-gradient(120deg, #a3e47d, #a3e47d);
-  position: fixed;
-  bottom:0;
-  z-index: 100;
-  width: 100%;}
 main {
-  position: relative;
-  overflow: hidden;
-  padding-top: 4rem;
-  padding-bottom: 2rem;
-  min-height: calc(100vh - 95px);
-background: linear-gradient(
-  rgba(166, 238, 212, 0.8),
-  rgb(1, 122, 122));}
+  min-height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(10px);
+}
+
+#home-head {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 3rem;
+  background: #000000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  animation: fadeInUp 1s ease-out;
+}
+
+#para-div1 {
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(25px);
+  padding: 4rem;
+  border-radius: 32px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  line-height: 1.8;
+}
+
+#para-div1 p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #444;
+  font-weight: 400;
+}
+
+#para-div1 p:last-child {
+  font-weight: 600;
+  color: #333;
+}
+
+footer {
+  background: #000000;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: auto;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+}
+
+footer h4 {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 2rem 1rem;
+  }
+  
+  #para-div1 {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  #para-div1 p {
+    font-size: 1.1rem;
+  }
+}
+
