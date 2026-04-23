@@ -55,7 +55,11 @@ const Admin = () => {
         </div>
         <div className="components">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/login">Logout</NavLink>
+          <button onClick={() => {
+            localStorage.removeItem("username");
+            localStorage.removeItem("role");
+            window.location.href = "/";
+          }} style={{background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline'}}>Logout</button>
         </div>
       </header>
 

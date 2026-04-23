@@ -2,6 +2,7 @@ import "./User.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import AddTruckForm from "./AddTruckForm";
 
 const User = () => {
   const username = localStorage.getItem("username");
@@ -117,13 +118,17 @@ const User = () => {
 
   return (
     <>
-      <header>
+<header>
         <div id="brand-name">
           <h1>Farmer Logistics Connector for Truck Sharing</h1>
         </div>
         <div className="components">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/login">Logout</NavLink>
+          <button onClick={() => {
+            localStorage.removeItem("username");
+            localStorage.removeItem("role");
+            window.location.href = "/";
+          }} style={{background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline'}}>Logout</button>
         </div>
       </header>
 
@@ -155,18 +160,8 @@ const User = () => {
             )}
 
             
-            {section === "add" && (
-              <div className="user-box">
-                <h2>Add Truck Details</h2>
-
-                <input type="date" value={marketDate} onChange={(e) => setMarketDate(e.target.value)} />
-                <input type="text" placeholder="Truck Number" value={truckNumber} onChange={(e) => setTruckNumber(e.target.value)} />
-                <input type="text" placeholder="Route From" value={routeFrom} onChange={(e) => setRouteFrom(e.target.value)} />
-                <input type="text" placeholder="Route To" value={routeTo} onChange={(e) => setRouteTo(e.target.value)} />
-                <input type="number" placeholder="Available Space (Quintals)" value={availableSpace} onChange={(e) => setAvailableSpace(e.target.value)} />
-
-                <button className="submit-btn" onClick={addItem}>Add</button>
-              </div>
+{section === "add" && (
+              <AddTruckForm username={username} />
             )}
 
             
